@@ -1,0 +1,5 @@
+build:
+  docker:
+      worker: /XScript/Dockerfile
+run:
+   worker: npm start
