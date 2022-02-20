@@ -22,7 +22,7 @@ XcriptX.addCommand({pattern: 'sticker spam$', fromMe: true,}, (async (message, m
     });
 
 
-    
+
     if (message.reply_message.video === false && message.reply_message.image) {
         execFile(cwebp, [locspam, '-o', 'output.webp'], async err => {
             if (err) {
@@ -32,6 +32,7 @@ XcriptX.addCommand({pattern: 'sticker spam$', fromMe: true,}, (async (message, m
                 await message.sendMessage(fs.readFileSync('./output.webp'), MessageType.sticker)
             }, 200)
         });
+        
     }
 
     ffmpeg(locspam)
