@@ -1,4 +1,4 @@
-const XTroid = require('../events');
+const XcriptX = require('../events');
 const {MessageType, Mimetype} = require('@adiwajshing/baileys');
 const fs = require('fs');
 const ffmpeg = require('fluent-ffmpeg');
