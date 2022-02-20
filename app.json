@@ -42,8 +42,7 @@
             "value": "*◦•●◉✿Uploading Your Song✿◉●•◦*"
         },
         "LANGUAGE": {
-            "description": "EN - English
-            ",
+            "description": "EN - English",
             "required": true,
             "value": "SI"
         },
