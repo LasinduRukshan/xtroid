@@ -106,17 +106,17 @@
         },
         "ALIVE_LOGO": {
             "description": "Alive message logo. Enter your image link below to change the image. (Upload the image you want to https://imgbb.com and put that link here.)",
-            "required": true,
+            "required": false,
             "value": ""
         },
         "WELCOME_GIF": {
             "description": "Welcome message logo.",
-            "required": true,
+            "required": false,
             "value": ""
         },
         "BYE_GIF": {
             "description": "Good Bye message logo",
-            "required": true,
+            "required": false,
             "value": ""
         },
         "UNMUTE_MESSAGE": {
