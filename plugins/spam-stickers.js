@@ -21,6 +21,8 @@ XcriptX.addCommand({pattern: 'sticker spam$', fromMe: true,}, (async (message, m
         message: message.reply_message.data.quotedMessage
     });
 
+
+    
     if (message.reply_message.video === false && message.reply_message.image) {
         execFile(cwebp, [locspam, '-o', 'output.webp'], async err => {
             if (err) {
