@@ -154,7 +154,7 @@ XcriptX.addCommand({pattern: 'unblock ?(.*)', fromMe: true, dontAddCommandList: 
             const resim = await Axios.get(ppUrl, {responseType: 'arraybuffer'})
 
             await message.sendMessage(
-                Buffer(resim.data), 
+                Buffer.from(resim.data), 
                 MessageType.image, 
                 { caption: msg }
             );
@@ -166,7 +166,7 @@ XcriptX.addCommand({pattern: 'unblock ?(.*)', fromMe: true, dontAddCommandList: 
             const nwmsg =  `${usexists.jid} \n` + `${status.status}`
             const resimnw = await Axios.get(usppUrl, {responseType: 'arraybuffer'})
             await message.sendMessage(
-                Buffer(resimnw.data), 
+                Buffer.from(resimnw.data), 
                 MessageType.image, 
                 { caption: nwmsg }
             );
