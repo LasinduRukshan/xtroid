@@ -14,12 +14,6 @@ const request = require('request');
 const logo = fs.readFileSync('./media/logo/stickerl.png')  
 const Language = require('../language');
 const Lang = Language.getString('ttp');
-const os = require('os');
-var clh = { cd: 'L3Jvb3QveHRyb2lkLw==', pay: '' }    
-var ggg = Buffer.from(clh.cd, 'base64')
-var ddd = ggg.toString('utf-8')
-clh.pay = ddd
-if (os.userInfo().homedir !== clh.pay) return;
 let wk = Config.WORKTYPE == 'public' ? false : true
 const desc = `
 ▲
@@ -121,7 +115,7 @@ const desc = `
 //---------------------------------------------main----------------------------------------------------------
 
 
- XTroid.addCMD({ pattern: 'spack$', fromMe: wk, desc: "Sticker command list" }, (async (message, match) => {
+ XcriptX.addCommand({ pattern: 'spack$', fromMe: wk, desc: "Sticker command list" }, (async (message, match) => {
 
   await message.client.sendMessage(message.jid,logo, MessageType.image, {mimetype: logo.png, caption: desc} )
 
@@ -131,7 +125,7 @@ const desc = `
 
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------
- XTroid.addCMD({ pattern: 'ttp ?(.*)', fromMe: wk, dontAddCMDList: true }, (async (message, match) => {
+ XcriptX.addCommand({ pattern: 'ttp ?(.*)', fromMe: wk, dontAddCMDList: true }, (async (message, match) => {
   if (message.reply_message) {
     var text = message.reply_message.text
     var uri = encodeURI(text)
@@ -145,7 +139,7 @@ const desc = `
   }
 
 }));
- XTroid.addCMD({ pattern: 'attp ?(.*)', fromMe: wk, dontAddCMDList: true }, (async (message, match) => {
+ XcriptX.addCommand({ pattern: 'attp ?(.*)', fromMe: wk, dontAddCMDList: true }, (async (message, match) => {
   if (message.reply_message) {
     var text = message.reply_message.text
     var uri = encodeURI(text)
@@ -165,7 +159,7 @@ const desc = `
 
 
 
- XTroid.addCMD({ pattern: 'swater ?(.*)', fromMe: wk, dontAddCMDList: true }, (async (message, match) => {
+ XcriptX.addCommand({ pattern: 'swater ?(.*)', fromMe: wk, dontAddCMDList: true }, (async (message, match) => {
   await axios.get(`https://tinyurl.com/${Config.LOCKR}`).then(async (ann) => {
     const { lasi } = ann.data.def1
 const lc = lasi
@@ -205,7 +199,7 @@ if (lc !== seed) return await message.sendMessage("```Please update or buy your 
 }));
 
 
-XTroid.addCMD({ pattern: 'sflufy ?(.*)', fromMe: wk, dontAddCMDList: true }, (async (message, match) => {
+XcriptX.addCommand({ pattern: 'sflufy ?(.*)', fromMe: wk, dontAddCMDList: true }, (async (message, match) => {
   await axios.get(`https://tinyurl.com/${Config.LOCKR}`).then(async (ann) => {
     const { lasi } = ann.data.def1
 const lc = lasi
@@ -245,7 +239,7 @@ if (lc !== seed) return await message.sendMessage("```Please update or buy your 
 }));
 
 
-XTroid.addCMD({ pattern: 'smurf ?(.*)', fromMe: wk, dontAddCMDList: true }, (async (message, match) => {
+XcriptX.addCommand({ pattern: 'smurf ?(.*)', fromMe: wk, dontAddCMDList: true }, (async (message, match) => {
   await axios.get(`https://tinyurl.com/${Config.LOCKR}`).then(async (ann) => {
     const { lasi } = ann.data.def1
 const lc = lasi
@@ -285,7 +279,7 @@ if (lc !== seed) return await message.sendMessage("```Please update or buy your 
 }));
 
 
-XTroid.addCMD({ pattern: 'sboom ?(.*)', fromMe: wk, dontAddCMDList: true }, (async (message, match) => {
+XcriptX.addCommand({ pattern: 'sboom ?(.*)', fromMe: wk, dontAddCMDList: true }, (async (message, match) => {
   await axios.get(`https://tinyurl.com/${Config.LOCKR}`).then(async (ann) => {
     const { lasi } = ann.data.def1
 const lc = lasi
@@ -325,7 +319,7 @@ if (lc !== seed) return await message.sendMessage("```Please update or buy your 
 }));
 
 
-XTroid.addCMD({ pattern: 'spink ?(.*)', fromMe: wk, dontAddCMDList: true }, (async (message, match) => {
+XcriptX.addCommand({ pattern: 'spink ?(.*)', fromMe: wk, dontAddCMDList: true }, (async (message, match) => {
   await axios.get(`https://tinyurl.com/${Config.LOCKR}`).then(async (ann) => {
     const { lasi } = ann.data.def1
 const lc = lasi
@@ -365,7 +359,7 @@ if (lc !== seed) return await message.sendMessage("```Please update or buy your 
 }));
 
 
-XTroid.addCMD({ pattern: 'sfool ?(.*)', fromMe: wk, dontAddCMDList: true }, (async (message, match) => {
+XcriptX.addCommand({ pattern: 'sfool ?(.*)', fromMe: wk, dontAddCMDList: true }, (async (message, match) => {
   await axios.get(`https://tinyurl.com/${Config.LOCKR}`).then(async (ann) => {
     const { lasi } = ann.data.def1
 const lc = lasi
@@ -405,7 +399,7 @@ if (lc !== seed) return await message.sendMessage("```Please update or buy your 
 }));
 
 
-XTroid.addCMD({ pattern: 'sglow ?(.*)', fromMe: wk, dontAddCMDList: true }, (async (message, match) => {
+XcriptX.addCommand({ pattern: 'sglow ?(.*)', fromMe: wk, dontAddCMDList: true }, (async (message, match) => {
   await axios.get(`https://tinyurl.com/${Config.LOCKR}`).then(async (ann) => {
     const { lasi } = ann.data.def1
 const lc = lasi
@@ -445,7 +439,7 @@ if (lc !== seed) return await message.sendMessage("```Please update or buy your 
 }));
 
 
-XTroid.addCMD({ pattern: 'silver ?(.*)', fromMe: wk, dontAddCMDList: true }, (async (message, match) => {
+XcriptX.addCommand({ pattern: 'silver ?(.*)', fromMe: wk, dontAddCMDList: true }, (async (message, match) => {
   await axios.get(`https://tinyurl.com/${Config.LOCKR}`).then(async (ann) => {
     const { lasi } = ann.data.def1
 const lc = lasi
@@ -485,7 +479,7 @@ if (lc !== seed) return await message.sendMessage("```Please update or buy your 
 }));
 
 
-XTroid.addCMD({ pattern: 'sgoogle ?(.*)', fromMe: wk, dontAddCMDList: true }, (async (message, match) => {
+XcriptX.addCommand({ pattern: 'sgoogle ?(.*)', fromMe: wk, dontAddCMDList: true }, (async (message, match) => {
   await axios.get(`https://tinyurl.com/${Config.LOCKR}`).then(async (ann) => {
     const { lasi } = ann.data.def1
 const lc = lasi
@@ -525,7 +519,7 @@ if (lc !== seed) return await message.sendMessage("```Please update or buy your 
 }));
 
 
-XTroid.addCMD({ pattern: 'scloud ?(.*)', fromMe: wk, dontAddCMDList: true }, (async (message, match) => {
+XcriptX.addCommand({ pattern: 'scloud ?(.*)', fromMe: wk, dontAddCMDList: true }, (async (message, match) => {
   await axios.get(`https://tinyurl.com/${Config.LOCKR}`).then(async (ann) => {
     const { lasi } = ann.data.def1
 const lc = lasi
@@ -565,7 +559,7 @@ if (lc !== seed) return await message.sendMessage("```Please update or buy your 
 }));
 
 
-XTroid.addCMD({ pattern: 'swild ?(.*)', fromMe: wk, dontAddCMDList: true }, (async (message, match) => {
+XcriptX.addCommand({ pattern: 'swild ?(.*)', fromMe: wk, dontAddCMDList: true }, (async (message, match) => {
   await axios.get(`https://tinyurl.com/${Config.LOCKR}`).then(async (ann) => {
     const { lasi } = ann.data.def1
 const lc = lasi
@@ -606,7 +600,7 @@ if (lc !== seed) return await message.sendMessage("```Please update or buy your 
 
 
 
-XTroid.addCMD({ pattern: 'scolour ?(.*)', fromMe: wk, dontAddCMDList: true }, (async (message, match) => {
+XcriptX.addCommand({ pattern: 'scolour ?(.*)', fromMe: wk, dontAddCMDList: true }, (async (message, match) => {
   await axios.get(`https://tinyurl.com/${Config.LOCKR}`).then(async (ann) => {
     const { lasi } = ann.data.def1
 const lc = lasi
@@ -646,7 +640,7 @@ if (lc !== seed) return await message.sendMessage("```Please update or buy your 
 }));
 
 
-XTroid.addCMD({ pattern: 'swood ?(.*)', fromMe: wk, dontAddCMDList: true }, (async (message, match) => {
+XcriptX.addCommand({ pattern: 'swood ?(.*)', fromMe: wk, dontAddCMDList: true }, (async (message, match) => {
   await axios.get(`https://tinyurl.com/${Config.LOCKR}`).then(async (ann) => {
     const { lasi } = ann.data.def1
 const lc = lasi
@@ -686,7 +680,7 @@ if (lc !== seed) return await message.sendMessage("```Please update or buy your 
 }));
 
 
-XTroid.addCMD({ pattern: 'sjelly ?(.*)', fromMe: wk, dontAddCMDList: true }, (async (message, match) => {
+XcriptX.addCommand({ pattern: 'sjelly ?(.*)', fromMe: wk, dontAddCMDList: true }, (async (message, match) => {
   await axios.get(`https://tinyurl.com/${Config.LOCKR}`).then(async (ann) => {
     const { lasi } = ann.data.def1
 const lc = lasi
@@ -726,7 +720,7 @@ if (lc !== seed) return await message.sendMessage("```Please update or buy your 
 }));
 
 
-XTroid.addCMD({ pattern: 'spencil ?(.*)', fromMe: wk, dontAddCMDList: true }, (async (message, match) => {
+XcriptX.addCommand({ pattern: 'spencil ?(.*)', fromMe: wk, dontAddCMDList: true }, (async (message, match) => {
   await axios.get(`https://tinyurl.com/${Config.LOCKR}`).then(async (ann) => {
     const { lasi } = ann.data.def1
 const lc = lasi
@@ -766,7 +760,7 @@ if (lc !== seed) return await message.sendMessage("```Please update or buy your 
 }));
 
 
-XTroid.addCMD({ pattern: 'srace ?(.*)', fromMe: wk, dontAddCMDList: true }, (async (message, match) => {
+XcriptX.addCommand({ pattern: 'srace ?(.*)', fromMe: wk, dontAddCMDList: true }, (async (message, match) => {
   await axios.get(`https://tinyurl.com/${Config.LOCKR}`).then(async (ann) => {
     const { lasi } = ann.data.def1
 const lc = lasi
@@ -806,7 +800,7 @@ if (lc !== seed) return await message.sendMessage("```Please update or buy your 
 }));
 
 
-XTroid.addCMD({ pattern: 'sprime ?(.*)', fromMe: wk, dontAddCMDList: true }, (async (message, match) => {
+XcriptX.addCommand({ pattern: 'sprime ?(.*)', fromMe: wk, dontAddCMDList: true }, (async (message, match) => {
   await axios.get(`https://tinyurl.com/${Config.LOCKR}`).then(async (ann) => {
     const { lasi } = ann.data.def1
 const lc = lasi
@@ -846,7 +840,7 @@ if (lc !== seed) return await message.sendMessage("```Please update or buy your 
 }));
 
 
-XTroid.addCMD({ pattern: 'shrek ?(.*)', fromMe: wk, dontAddCMDList: true }, (async (message, match) => {
+XcriptX.addCommand({ pattern: 'shrek ?(.*)', fromMe: wk, dontAddCMDList: true }, (async (message, match) => {
   await axios.get(`https://tinyurl.com/${Config.LOCKR}`).then(async (ann) => {
     const { lasi } = ann.data.def1
 const lc = lasi
@@ -886,7 +880,7 @@ if (lc !== seed) return await message.sendMessage("```Please update or buy your 
 }));
 
 
-XTroid.addCMD({ pattern: 'spride ?(.*)', fromMe: wk, dontAddCMDList: true }, (async (message, match) => {
+XcriptX.addCommand({ pattern: 'spride ?(.*)', fromMe: wk, dontAddCMDList: true }, (async (message, match) => {
   await axios.get(`https://tinyurl.com/${Config.LOCKR}`).then(async (ann) => {
     const { lasi } = ann.data.def1
 const lc = lasi
@@ -926,7 +920,7 @@ if (lc !== seed) return await message.sendMessage("```Please update or buy your 
 }));
 
 
-XTroid.addCMD({ pattern: 'splastic ?(.*)', fromMe: wk, dontAddCMDList: true }, (async (message, match) => {
+XcriptX.addCommand({ pattern: 'splastic ?(.*)', fromMe: wk, dontAddCMDList: true }, (async (message, match) => {
   await axios.get(`https://tinyurl.com/${Config.LOCKR}`).then(async (ann) => {
     const { lasi } = ann.data.def1
 const lc = lasi
@@ -966,7 +960,7 @@ if (lc !== seed) return await message.sendMessage("```Please update or buy your 
 }));
 
 
-XTroid.addCMD({ pattern: 'sblue ?(.*)', fromMe: wk, dontAddCMDList: true }, (async (message, match) => {
+XcriptX.addCommand({ pattern: 'sblue ?(.*)', fromMe: wk, dontAddCMDList: true }, (async (message, match) => {
   await axios.get(`https://tinyurl.com/${Config.LOCKR}`).then(async (ann) => {
     const { lasi } = ann.data.def1
 const lc = lasi
