@@ -1,9 +1,9 @@
 /* X-Script  */
 
 const XcriptX = require('../events');
-const {MessageType} = require('@adiwajshing/baileys');
+const { MessageType, Mimetype, GroupSettingChange, MessageOptions } = require('@adiwajshing/baileys');
 const Config = require('../config');
-
+const Axios = require('axios');
 const fs = require('fs');
 
 
@@ -138,3 +138,37 @@ XcriptX.addCommand({pattern: 'unblock ?(.*)', fromMe: true, dontAddCommandList: 
     }));
 
 
+    XcriptX.addCommand({ pattern: 'info', fromMe: true,dontAddCMDList: true }, async (message, match) => { 
+
+        if (message.jid.includes('-')) {
+            var lasijson = await message.client.groupMetadataMinimal(message.jid) 
+
+            var code = await message.client.groupInviteCode(message.jid)
+
+            var nwjson = await message.client.groupMetadata(message.jid) 
+
+            const msg = `*Grup ID:* ${lasijson.id} \n`  + `${nwjson.subject} \n`  + `${lasijson.owner} \n`  + `${code} \n` + `\n\n${nwjson.desc}`
+
+            var ppUrl = await message.client.getProfilePicture(message.jid) 
+
+            const resim = await Axios.get(ppUrl, {responseType: 'arraybuffer'})
+
+            await message.sendMessage(
+                Buffer(resim.data), 
+                MessageType.image, 
+                { caption: msg }
+            );
+        }
+        else {
+            var status = await message.client.getStatus(message.jid) 
+            var usppUrl = await message.client.getProfilePicture(message.jid) 
+            var usexists = await message.client.isOnWhatsApp(message.jid)
+            const nwmsg =  `${usexists.jid} \n` + `${status.status}`
+            const resimnw = await Axios.get(usppUrl, {responseType: 'arraybuffer'})
+            await message.sendMessage(
+                Buffer(resimnw.data), 
+                MessageType.image, 
+                { caption: nwmsg }
+            );
+        }
+    });

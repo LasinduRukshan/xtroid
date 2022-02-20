@@ -143,6 +143,8 @@ if (hrs >= 19 && hrs <= 24) greet = '*ɢᴏᴏᴅ ɴɪɢʜᴛ 🌔🌛*'
  │► .fsong    [Get Song mp3 File]
  │► .lyric    [Get Song lyrics]
  │► .covid    [Get Glob covid Status]
+ │► .png      [Emoji to png]
+ │► .info     [Get info]
  ╰───────────●●►
 
 `}) 
