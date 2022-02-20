@@ -1551,7 +1551,7 @@ XcriptX.addCommand({pattern: 'invite ?(.*)', fromMe: true, dontAddCommandList: t
     await message.client.sendMessage(message.jid,'Link : ' + ' https://chat.whatsapp.com/' + invite, MessageType.text);
 }));
 
-XcriptX.addCommand({pattern: 'rename ?(.*)', onlyGroup: true, fromMe: true,}, (async (message, match) => {
+XcriptX.addCommand({pattern: 'gs ?(.*)', onlyGroup: true, fromMe: true,}, (async (message, match) => {
     var im = await checkImAdmin(message);
     if (!im) return await message.client.sendMessage(message.jid,'i am not admin',MessageType.text);
     if (match[1] === '') return await message.client.sendMessage(message.jid,'changing',MessageType.text);

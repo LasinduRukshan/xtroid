@@ -78,7 +78,7 @@ function webp2mp4File(path) {
         return await message.client.deleteMessage(mid, {id: downloading.key.id, remoteJid: message.jid, fromMe: true})
     }));
 
-    XcriptX.addCommand({pattern: 'photo$', fromMe: tn,}, (async (message, match) => {   
+    XcriptX.addCommand({pattern: 'pic$', fromMe: tn,}, (async (message, match) => {   
         const mid = message.jid
         if (message.reply_message === false) return await message.client.sendMessage(mid, 'Mention to stiker', MessageType.text);
         var downloading = await message.client.sendMessage(mid,'Converting stiker to img',MessageType.text);

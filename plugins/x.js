@@ -29,29 +29,76 @@ if (hrs >= 19 && hrs <= 24) greet = '*ɢᴏᴏᴅ ɴɪɢʜᴛ 🌔🌛*'
  │ *👤Name:* ${Config.BOT_NAME}
  │ *💎Role:* Developer
  │ *⌚Time:* ${time}
- │ *📡Server: 
  │
- │☬Working As*
- │ ${Config.WORKTYPE}*
+ │
+ │☬X Lite bot☬
+ │ *${Config.WORKTYPE} Bot*
  │   _x-Script_
  ╰──────────●●►
 
  ╭──────────●●►
- │BOT COMMANDS*
- │   ───────
+ │ *BOT COMMANDS*
+ │  ───────────
  │
  │► .${Config.MENU_COMMAND} [All command list]
- │► .alive [Check bot status]
- │► .bot [chat with bot]
- │► .Admin [ for owner ]
- │► .version [check Version 
- │► .update [check Update]
- │► .update now [get update ]
- │► .restart 
+ │► .up       [check Update]
+ │► .up now   [Do Update]
+ │► .restart  [Restart Bot]
+ │► .install  [Install plugin]
+ │► .pluglist [Installed List]
+ │► .remove   [Remove plugin]
+ │► .filter   [Add New Filter]
+ │► .stop     [Stop Filter]
+ │► .shutdown [Turn Off Bot]
+ ╰──────────●●►
+
+ ╭──────────●●►
+ │ *ADMIN COMMANDS*
+ │  ────────────
+ │
+ │► .ban      [Ban User]
+ │► .add      [Add User]
+ │► .promote  [Promote User]
+ │► .demote   [Demote User]
+ │► .mute     [Mute Group]
+ │► .unmute   [Unmute Group]
+ │► .invite   [Get Invite Link]
+ │► .gs       [Change Group Name]
+ │► .welcome  [Add Welcome note]
+ │► .
+ ╰───────────●●►
+
+ ╭──────────●●►
+ │ *CONVERTER*
+ │  ────────────
+ │
+ │► .mp3      [Video to mp3]
+ │► .pic      [Sticker to photo]
+ ╰───────────●●►
+
+ ╭──────────●●►
+ │ *GREETINGS*
+ │  ────────────
+ │
+ │► .gm       [Good Morning msg]
+ │► .gm       [Good Night msg]
+ │► .welcome  [Set Welcome]
+ │► .welcome delet
+ │► .goodbye  [Set Good bye]
+ │► .goodbye delet
+ ╰───────────●●►
+
+ ╭──────────●●►
+ │ *VARIABLES*
+ │  ────────────
+ │► .dyno     [Check Dyno]
+ │► .setvar   [Create Variable]
+ │► .delvar   [delet Variable]
+ │► .getvar   [Get Variable]
  ╰───────────●●►
 
 
- 
+
 `}) 
 
  }));
@@ -77,7 +124,7 @@ if (hrs >= 19 && hrs <= 24) greet = '*ɢᴏᴏᴅ ɴɪɢʜᴛ 🌔🌛*'
                 } else {
                     HANDLER = '.';
                 }
-                CMD_HELP += (match.length >= 3 ? (HANDLER + match[2]) : command.pattern);
+                CMD_HELP += (match.length >= 3 ? (HANDLER + match[2]+'\n') : command.pattern);
             }
         );
        var MENMSG = CMD_HELP + '\n'
@@ -105,7 +152,7 @@ if (hrs >= 19 && hrs <= 24) greet = '*ɢᴏᴏᴅ ɴɪɢʜᴛ 🌔🌛*'
                     } else {
                         HANDLER = '.';
                     }
-                    CMD_HELP += (match.length >= 3 ? (HANDLER + match[2]) : command.pattern);
+                    CMD_HELP += (match.length >= 3 ? (HANDLER + match[2]+'\n') : command.pattern);
                 }
             }
         );
