@@ -11,7 +11,7 @@ const {execFile} = require('child_process');
 const cwebp = require('cwebp-bin');
 const xtrobot = require('xtroid-admin')
 const request = require('request');
-const logo = fs.readFileSync('./media/logo/stickerl.png')  
+
 const Language = require('../language');
 const Lang = Language.getString('ttp');
 let wk = Config.WORKTYPE == 'public' ? false : true
@@ -116,8 +116,8 @@ const desc = `
 
 
  XcriptX.addCommand({ pattern: 'spack$', fromMe: wk, desc: "Sticker command list" }, (async (message, match) => {
+  await message.client.sendMessage(message.jid,desc, MessageType.text);
 
-  await message.client.sendMessage(message.jid,logo, MessageType.image, {mimetype: logo.png, caption: desc} )
 
 }));
 
