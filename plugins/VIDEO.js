@@ -17,7 +17,7 @@ const YTV_UP = "*🚀Uploading Your Video...*"
 const NO_RESULT = "*🌀can't Find Anything...*"
 const tk = Config.WORKTYPE == 'public' ? false : true
 
-    XcriptX.addCommand({ pattern: 'video ?(.*)', fromMe: tk, deleteCommand: false,  deleteCommand: false}, async (message, match) => {
+    XcriptX.addCommand({ pattern: '2video ?(.*)', fromMe: tk, deleteCommand: false,  deleteCommand: false}, async (message, match) => {
         const linkk = match[1]
         if (!linkk) return await message.client.sendMessage(message.jid,YT_NEED,MessageType.text)
         await message.client.sendMessage(message.jid,DWLOAD_VID,MessageType.text);

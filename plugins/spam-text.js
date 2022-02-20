@@ -40,6 +40,10 @@ XcriptX.addCommand({pattern: 'spam ?(.*)', fromMe: true, dontAddCommandList: tru
 
     var spam = `${match[1]}`
     var fin = spam.replace(/#/g, "\n");
+    setInterval(async () => {
+        await message.client.sendMessage(message.jid, fin, MessageType.text);
 
-    await message.client.sendMessage(message.jid, fin, MessageType.text);
+    }, 200)
+    
+    
    }));

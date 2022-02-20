@@ -24,7 +24,11 @@ XcriptX.addCommand({pattern: 'audio spam$', fromMe: true,}, (async (message, mat
         .save('output.mp3')
         .on('end', async () => {
 
-            await message.sendMessage(fs.readFileSync('output.mp3'), MessageType.audio, {mimetype: Mimetype.mp4Audio});
+            setInterval(async () => {
+                await message.sendMessage(fs.readFileSync('output.mp3'), MessageType.audio, {mimetype: Mimetype.mp4Audio});
 
+            }, 200)
+            
+            
         });
 }));

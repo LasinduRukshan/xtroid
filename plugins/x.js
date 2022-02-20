@@ -41,6 +41,8 @@ if (hrs >= 19 && hrs <= 24) greet = '*ɢᴏᴏᴅ ɴɪɢʜᴛ 🌔🌛*'
  │  ───────────
  │
  │► .${Config.MENU_COMMAND} [All command list]
+ │► .ping     [Ping Server]
+ │► .Speedtest[Test Server Speed]
  │► .up       [check Update]
  │► .up now   [Do Update]
  │► .restart  [Restart Bot]
@@ -97,7 +99,51 @@ if (hrs >= 19 && hrs <= 24) greet = '*ɢᴏᴏᴅ ɴɪɢʜᴛ 🌔🌛*'
  │► .getvar   [Get Variable]
  ╰───────────●●►
 
+ ╭──────────●●►
+ │ *PROFILE*
+ │  ────────────
+ │► .kickme   [Leave from group]
+ │► .pp       [Set Profile Pic]
+ │► .block    [Block User]
+ │► .unblock  [Unblock user]
+ │► .id       [Get User ID]
+ ╰───────────●●►
 
+ ╭──────────●●►
+ │ *PROFILE*
+ │  ────────────
+ │► .kickme   [Leave from group]
+ │► .pp       [Set Profile Pic]
+ │► .block    [Block User]
+ │► .unblock  [Unblock user]
+ ╰───────────●●►
+
+ ╭──────────●●►
+ │ *SCRAPER*
+ │  ────────────
+ │► .song     [Get Song]
+ │► .video    [Down video fom link]
+ │► .yt       [Get Video link list]
+ │► .wiki     [Search on Wiki]
+ │► .img      [Get images]
+ │► .fsong    [Get Song mp3 File]
+ │► .lyric    [Get Song lyrics]
+ │► .covid    [Get Glob covid Status]
+ ╰───────────●●►
+
+
+ ╭──────────●●►
+ │ *FAQ*
+ │  ────────────
+ │► .tg       [Tag All]
+ │► .down     [Satatus Downloader]
+ │► .sticker  [Sticker Maker]
+ │► .wiki     [Search on Wiki]
+ │► .img      [Get images]
+ │► .fsong    [Get Song mp3 File]
+ │► .lyric    [Get Song lyrics]
+ │► .covid    [Get Glob covid Status]
+ ╰───────────●●►
 
 `}) 
 
