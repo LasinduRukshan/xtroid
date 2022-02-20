@@ -70,7 +70,7 @@ Array.prototype.remove = function() {
 
 async function Xcript () {
     const conn = new WAConnection();
-    conn.version = [2, 2147, 16];
+    conn.version = [2, 2204, 13];
     const Session = new StringSession();
 setInterval(async () => { 
         var getGMTh = new Date().getHours()
@@ -96,24 +96,9 @@ setInterval(async () => {
         })
     }, 50000);
 
-// ======================ANNOUNCEMENT ================
 
-var biography_var = ''
-await heroku.get(baseURI + '/config-vars').then(async (vars) => {
-    biography_var = vars.AUTO_BIO
-});
 
-setInterval(async () => { 
-    if (biography_var == 'true') {
-        
-            var ov_time = new Date().toLocaleString('LK', { timeZone: 'Asia/Colombo' }).split(' ')[1]
-            const biography = '🤩 ' + ov_time + '\n⌚ ' 
-            await conn.setStatus(biography)
-        
-    }
-}, 7890);
 
-// ===================AUTO-BIO===================
 
     var insult = await axios.get('https://gist.githubusercontent.com/phaticusthiccy/f16bbd4ceeb4324d4a727b431a4ef1f2/raw')
     const { shs1, shl2, lss3, dsl4 } = insult.data.inside
@@ -364,8 +349,7 @@ ${chalk.blue.italic('👩‍🦰 Connecting to WhatsApp...')}`);
                         else if (command.onlyGroup === chat.jid.includes('-')) sendMsg = true;
                     }  
                      
-//=====================================================================================
-//=====================================================================================
+
                             
                     if (sendMsg) {
                         if (config.SEND_READ && command.on === undefined) {
@@ -390,9 +374,6 @@ ${chalk.blue.italic('👩‍🦰 Connecting to WhatsApp...')}`);
 */
 
 
-//=====================================================================================
-//=====================================================================================
-
                         try {
                             await command.function(whats, match);
                         } catch (error) {
@@ -400,160 +381,7 @@ ${chalk.blue.italic('👩‍🦰 Connecting to WhatsApp...')}`);
                             if (config.LANG == 'SI' || config.LANG == 'AZ') {
                                 await conn.sendMessage(conn.user.jid, 'Error:' + error + '```\n\n'
                                     , MessageType.text, {detectLinks: false});
-
-                                if (error.message.includes('URL')) {
-                                    return await conn.sendMessage(conn.user.jid, 'Error:'
-                                        , MessageType.text
-                                    );
-                                }
-                                else if (error.message.includes('SSL')) {
-                                    return await conn.sendMessage(conn.user.jid, '_SQL Database Error_'
-                                        , MessageType.text
-                                    );
-                                }
-                                else if (error.message.includes('split')) {
-                                    return await conn.sendMessage(conn.user.jid, '_Split of Undefined_'
-                                        , MessageType.text
-                                    );                               
-                                }
-                                else if (error.message.includes('Ookla')) {
-                                    return await conn.sendMessage(conn.user.jid, '_Ookla Server Connection_'
-                                        , MessageType.text
-                                    );
-                                }
-                                else if (error.message.includes('params')) {
-                                    return await conn.sendMessage(conn.user.jid, '_Requested Audio Params_'
-                                        , MessageType.text
-                                    );
-                                }
-                                else if (error.message.includes('unlink')) {
-                                    return await conn.sendMessage(conn.user.jid, '_No Such File or Directory_'
-                                        , MessageType.text
-                                    );
-                                }
-                                else if (error.message.includes('404')) {
-                                    return await conn.sendMessage(conn.user.jid, '_Error 404 HTTPS_'
-                                        , MessageType.text
-                                    );
-                                }
-                                else if (error.message.includes('reply.delete')) {
-                                    return await conn.sendMessage(conn.user.jid, '_Reply Delete Function_'
-                                        , MessageType.text
-                                    );
-                                }
-                                else if (error.message.includes('load.delete')) {
-                                    return await conn.sendMessage(conn.user.jid, '_Reply Delete Function_'
-                                        , MessageType.text
-                                    );
-                                }
-                                else if (error.message.includes('400')) {
-                                    return await conn.sendMessage(conn.user.jid, '_Bailyes Action Error_'
-                                        , MessageType.text
-                                    );
-                                }
-                                else if (error.message.includes('decode')) {
-                                    return await conn.sendMessage(conn.user.jid, '_Cannot Decode Text or Media_'
-                                        , MessageType.text
-                                    );
-                                }
-                                else if (error.message.includes('unescaped')) {
-                                    return await conn.sendMessage(conn.user.jid, '_Word Character Usage_'
-                                        , MessageType.text
-                                    );
-                                }
-                                else if (error.message.includes('conversation')) {
-                                    return await conn.sendMessage(conn.user.jid, '_Deleting Plugin_'
-                                        , MessageType.text
-                                    );
-                                }
-                                else {
-                                    return await conn.sendMessage(conn.user.jid, 'Cant idintyfied Error Please Write On Support: Group'
-                                        , MessageType.text
-                                    );
-                                }
                             }
-                            else {
-                                await conn.sendMessage(conn.user.jid, '*-- Bot Report [ ' + awsh.DEVELOPER_TAG +' ] --*' + 
-                                    '\n* ' + awsh.DEVELOPER_TAG +'  Working Perfectly!*'+
-                                    '\n_This is Your LOG Number Dont try Command here.!_' +
-                                    '\n_Also you can Join our Support group.._' +
-                                    '\n_Support group_:  🛡️ https://t.me/+3Si3YhZcfPhhOGM1' +
-                                    '\n_(saved Messages)._\n\n' +
-                                    '*Error:* ```' + error + '```\n\n'
-                                    , MessageType.text, {detectLinks: false}
-                                );
-                                if (error.message.includes('URL')) {
-                                    return await conn.sendMessage(conn.user.jid, '_Url Error_'
-                                        , MessageType.text
-                                    );
-                                }
-                                else if (error.message.includes('conversation')) {
-                                    return await conn.sendMessage(conn.user.jid, '_Entering incorrectly the name of the plugin wanted to be deleted._'
-                                        , MessageType.text
-                                    );
-                                }
-                                else if (error.message.includes('split')) {
-                                    return await conn.sendMessage(conn.user.jid, ' _Split of Undefined_'
-                                        , MessageType.text
-                                    );
-                                }
-                                else if (error.message.includes('SSL')) {
-                                    return await conn.sendMessage(conn.user.jid, '_SQL Database Error_'
-                                        , MessageType.text
-                                    );
-                                }
-                                else if (error.message.includes('Ookla')) {
-                                    return await conn.sendMessage(conn.user.jid, '_Ookla Server Connection_'
-                                        , MessageType.text
-                                    );
-                                }
-                                else if (error.message.includes('params')) {
-                                    return await conn.sendMessage(conn.user.jid, '_Requested Audio Params_'
-                                        , MessageType.text
-                                    );
-                                }
-                                else if (error.message.includes('unlink')) {
-                                    return await conn.sendMessage(conn.user.jid, '_No Such File or Directory_'
-                                        , MessageType.text
-                                    );
-                                }
-                                else if (error.message.includes('404')) {
-                                    return await conn.sendMessage(conn.user.jid, '_Error 404 HTTPS_'
-                                        , MessageType.text
-                                    );
-                                }
-                                else if (error.message.includes('reply.delete')) {
-                                    return await conn.sendMessage(conn.user.jid, '_Reply Delete Function_'
-                                        , MessageType.text
-                                    );
-                                }
-                                else if (error.message.includes('load.delete')) {
-                                    return await conn.sendMessage(conn.user.jid, '_Reply Delete Function_'
-                                        , MessageType.text
-                                    );
-                                }
-                                else if (error.message.includes('400')) {
-                                    return await conn.sendMessage(conn.user.jid, '_Bailyes Action Error_'
-                                        , MessageType.text
-                                    );
-                                }
-                                else if (error.message.includes('decode')) {
-                                    return await conn.sendMessage(conn.user.jid, '_Cannot Decode Text or Media_'
-                                        , MessageType.text
-                                    );
-                                }
-                                else if (error.message.includes('unescaped')) {
-                                    return await conn.sendMessage(conn.user.jid, '_Word Character Usage_'
-                                        , MessageType.text
-                                    );
-                                }
-                                else {
-                                    return await conn.sendMessage(conn.user.jid, '*Couldnt Read This Error!🙇🏻*' +
-                                        '\n_You can write to our support groups for more help...🛡️ https://t.me/+3Si3YhZcfPhhOGM1'
-                                        , MessageType.text
-                                    );
-                               }
-                          }
                       }
                   }
                }  
