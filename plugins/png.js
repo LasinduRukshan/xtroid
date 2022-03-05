@@ -27,6 +27,33 @@ if (Config.WORKTYPE == 'private') {
         await message.sendMessage(Buffer.from(webimage.data), MessageType.image, {mimetype: Mimetype.png,})
 
     }));
+    XcriptX.addCommand({pattern: 'pg ?(.*)', fromMe: true, desc: des}, (async (message, match) => {
+
+        if (match[1] === '') return await message.sendMessage(iii);
+
+        var webimage = await axios.get(`https://docs-jojo.herokuapp.com/api/emoji2png?emoji=${encodeURIComponent(match[1])}&type=google`, { responseType: 'arraybuffer' })
+
+        await message.sendMessage(Buffer.from(webimage.data), MessageType.image, {mimetype: Mimetype.png,})
+
+    }));
+    XcriptX.addCommand({pattern: 'pf ?(.*)', fromMe: true, desc: des}, (async (message, match) => {
+
+        if (match[1] === '') return await message.sendMessage(iii);
+
+        var webimage = await axios.get(`https://docs-jojo.herokuapp.com/api/emoji2png?emoji=${encodeURIComponent(match[1])}&type=facebook`, { responseType: 'arraybuffer' })
+
+        await message.sendMessage(Buffer.from(webimage.data), MessageType.image, {mimetype: Mimetype.png,})
+
+    }));
+    XcriptX.addCommand({pattern: 'pm ?(.*)', fromMe: true, desc: des}, (async (message, match) => {
+
+        if (match[1] === '') return await message.sendMessage(iii);
+
+        var webimage = await axios.get(`https://docs-jojo.herokuapp.com/api/emoji2png?emoji=${encodeURIComponent(match[1])}&type=messenger`, { responseType: 'arraybuffer' })
+
+        await message.sendMessage(Buffer.from(webimage.data), MessageType.image, {mimetype: Mimetype.png,})
+
+    }));
 }
 else if (Config.WORKTYPE == 'public') {
 
@@ -51,3 +78,5 @@ else if (Config.WORKTYPE == 'public') {
 
     }));
 }
+
+

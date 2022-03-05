@@ -144,6 +144,9 @@ if (hrs >= 19 && hrs <= 24) greet = '*ɢᴏᴏᴅ ɴɪɢʜᴛ 🌔🌛*'
  │► .lyric    [Get Song lyrics]
  │► .covid    [Get Glob covid Status]
  │► .png      [Emoji to png]
+ │► .pg       [Emoji to png]
+ │► .pm       [Emoji to png]
+ │► .pf       [Emoji to png]
  │► .info     [Get info]
  ╰───────────●●►
 
